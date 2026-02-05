@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+
 import { ArrowLeft, ThumbsUp, MapPin, Calendar, UserCircle, Clock, Target, Shield, CheckCircle, Award, Zap, Video, Monitor, Smartphone, ChevronRight } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
 
@@ -8,85 +8,9 @@ import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
-  const [showDetails, setShowDetails] = useState(false);
+ 
   const navigate = useNavigate();
 
-  
-  const interviewData = {
-    company: "Google",
-    role: "Senior Software Engineer",
-    difficulty: "Medium",
-    experienceLevel: "5+ Years",
-    status: "Offer Received",
-    location: "Mountain View, CA",
-    date: "November 15, 2024",
-    author: "Anonymous User",
-    postedDate: "11/2/2025"
-  };
-
-  if (showDetails) {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white p-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white rounded-lg shadow-md p-6">
-            <div className="flex items-start justify-between mb-6">
-              <h1 className="text-3xl font-bold text-gray-800">
-                {interviewData.company} - {interviewData.role}
-              </h1>
-              <div className="flex gap-3">
-                <button 
-                  onClick={() => setShowDetails(false)}
-                  className="flex items-center gap-2 px-4 py-2 border-2 border-blue-500 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors"
-                >
-                  <ArrowLeft size={18} />
-                  Back
-                </button>
-                <button className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
-                  <ThumbsUp size={18} />
-                  Helpful
-                </button>
-              </div>
-            </div>
-            
-            <div className="flex flex-wrap gap-3 mb-6">
-              <span className="inline-block bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-semibold uppercase">
-                {interviewData.difficulty}
-              </span>
-              <span className="inline-block bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm">
-                {interviewData.experienceLevel}
-              </span>
-              <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-700 px-4 py-1.5 rounded-full text-sm font-medium">
-                <span className="text-lg">✓</span> {interviewData.status}
-              </span>
-            </div>
-            
-            <div className="space-y-3 text-gray-700">
-              <div className="flex items-center gap-2">
-                <MapPin size={18} className="text-gray-500" />
-                <span className="font-medium">Location:</span>
-                <span className="text-gray-600">{interviewData.location}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar size={18} className="text-gray-500" />
-                <span className="font-medium">Interview Date:</span>
-                <span className="text-gray-600">{interviewData.date}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <UserCircle size={18} className="text-gray-500" />
-                <span className="font-medium">Posted by:</span>
-                <span className="text-gray-600">{interviewData.author}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock size={18} className="text-gray-500" />
-                <span className="font-medium">Posted on:</span>
-                <span className="text-gray-600">{interviewData.postedDate}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-white">
@@ -151,12 +75,12 @@ const Home = () => {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
-                  onClick={() => setShowDetails(true)}
-                  className="group flex items-center justify-center gap-2 px-7 py-3.5 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl hover:bg-blue-700 transition-all"
-                >
-                  <Zap size={20} className="group-hover:rotate-12 transition-transform" />
-                  Start Free Trial
+                   onClick={() => navigate("/register")}
+                    className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg font-bold hover:shadow-2xl hover:scale-105 transition-all">
+                            Get Started Free
+                          <ChevronRight size={20} />
                 </button>
+
                 <button onClick={() => navigate("/features")} className="flex items-center justify-center gap-2 px-7 py-3.5 bg-white border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all">
                   
                   Learn More
@@ -472,7 +396,7 @@ const Home = () => {
             Join 1000+ companies who trust Interview Pro for verified technical assessments
           </p>
           <button 
-            onClick={() => setShowDetails(true)}
+             onClick={() => navigate("/register")}
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-lg font-bold hover:shadow-2xl hover:scale-105 transition-all"
           >
             Get Started Free

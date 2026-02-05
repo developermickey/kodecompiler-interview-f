@@ -158,7 +158,7 @@ const Pricing = () => {
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transition">
+            <button onClick={() => navigate("/register")} className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold shadow-lg transition">
               🚀 Start Free – 5 Sessions Included
             </button>
 

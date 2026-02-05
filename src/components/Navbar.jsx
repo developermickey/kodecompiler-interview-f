@@ -12,9 +12,10 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center gap-8">
             <Link to="/" className="flex items-center gap-2">
-              <div className="w-9 h-9 bg-blue-600 rounded flex items-center justify-center">
-                <Target className="text-white" size={18} />
+              <div className="w-8 h-8 rounded-xl  flex items-center justify-center ">
+                  <span className="text-3xl">🎯</span>
               </div>
+
               <span className="text-xl font-bold text-gray-900">Interview Pro</span>
             </Link>
             

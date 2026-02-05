@@ -9,6 +9,7 @@ import HowItWorks from './pages/HowItWorks';
 import Login from './pages/Login';
 import ContactUs from './pages/ContactUs';
 import ScrollToTop from './components/ScrollToTop';
+import Register from './pages/Register';
 import './App.css'
 import './index.css'
 
@@ -36,6 +37,7 @@ function App() {
                     <Route path="/how-it-works" element={<HowItWorks />} />
                     <Route path="/login" element={<Login />} />
                     <Route path='/contact' element={<ContactUs />}/>
+                    <Route path='/register' element={<Register />}/>
                   </Routes>
                 </main>
                 <Footer />
