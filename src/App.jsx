@@ -10,6 +10,8 @@ import Login from './pages/Login';
 import ContactUs from './pages/ContactUs';
 import ScrollToTop from './components/ScrollToTop';
 import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import ProfilePage from './pages/ProfilePage';
 import './App.css'
 import './index.css'
 
@@ -19,14 +21,15 @@ function App() {
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
         
-          {/* Login page - no navbar/footer */}
-         
-            
+        <Routes>
+          {/* Dashboard & Profile - no navbar/footer */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<ProfilePage />} />
           
-          
-          {/* Pages with navbar and footer */}
-          
-            
+          {/* All other pages with navbar and footer */}
+          <Route
+            path="*"
+            element={
               <>
                 <Navbar />
                 <main className="flex-grow">
@@ -42,8 +45,9 @@ function App() {
                 </main>
                 <Footer />
               </>
-            
-          
+            }
+          />
+        </Routes>
         
       </div>
     </Router>

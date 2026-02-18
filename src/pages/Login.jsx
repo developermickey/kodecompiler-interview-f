@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Lock, Mail, Eye, EyeOff, ArrowRight, AlertCircle, Target } from 'lucide-react';
 
 
 const Login = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +32,11 @@ const Login = () => {
     
     if (!newErrors.email && !newErrors.password) {
       console.log('Login attempt:', { email, password});
-      // Add your login logic here
+      // Store user session/token here
+      localStorage.setItem('userEmail', email);
+      localStorage.setItem('isLoggedIn', 'true');
+      // Redirect to dashboard
+      navigate('/dashboard');
     }
   };
 
